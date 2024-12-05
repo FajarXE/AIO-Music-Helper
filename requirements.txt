@@ -16,3 +16,4 @@ pycryptodomex
 pyrofork
 python-dotenv
 TgCrypto-pyrofork
+uvloop

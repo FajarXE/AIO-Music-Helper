@@ -25,7 +25,10 @@ class Config(object):
         DATABASE_URL = getenv("DATABASE_URL")
         BOT_USERNAME = getenv("BOT_USERNAME")
         ADMINS = set(int(x) for x in getenv("ADMINS").split())
-    except:
+        PORT = getenv("PORT", "0")
+        if PORT.isdigit():
+            PORT = int(PORT)
+    except KeyError as e:
         LOGGER.warning("Essential Configs are missing")
         exit(1)
 

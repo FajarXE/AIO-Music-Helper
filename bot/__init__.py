@@ -1,3 +1,4 @@
+from uvloop import install
 from config import Config
 from pyrogram import Client
 import subprocess, os
@@ -16,8 +17,8 @@ class CMD(object):
     START = ["start", f"start@{bot}"]
     HELP = ["help", f"help@{bot}"]
     # Open Settings Panel
-    SETTINGS = ["settings", f"settings@{bot}"]
-    DOWNLOAD = ["download", f"download@{bot}"]
+    SETTINGS = ["set", f"set@{bot}"]
+    DOWNLOAD = ["dl", f"dl@{bot}"]
     # Auth user or chat to use the bot
     # TODO Add cmd to remove auth
     AUTH = ["auth", f"auth@{bot}"]

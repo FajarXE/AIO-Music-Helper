@@ -9,10 +9,6 @@ plugins = dict(
     root="bot/modules"
 )
 
-PORT = int(os.getenv("PORT"))
-
-subprocess.Popen([f"gunicorn server:app --bind 0.0.0.0:{PORT} --worker-class gevent"], shell=True)
-
 class CMD(object):
     START = ["start", f"start@{bot}"]
     HELP = ["help", f"help@{bot}"]
@@ -35,5 +31,10 @@ aio = Client(
     plugins=plugins,
     workdir=Config.WORK_DIR
 )
+
+try:
+    subprocess.Popen([f"gunicorn server:app --bind 0.0.0.0:{Config.PORT} --worker-class gevent"], shell=True)
+except:
+    pass
 
 cmd = CMD()

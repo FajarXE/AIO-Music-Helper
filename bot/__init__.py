@@ -1,11 +1,17 @@
 from config import Config
+from uvloop import install
 from pyrogram import Client
-
+import subprocess, os
+install()
 bot = Config.BOT_USERNAME
 
 plugins = dict(
     root="bot/modules"
 )
+
+PORT = int(os.getenv("PORT"))
+
+subprocess.Popen([f"gunicorn server:app --bind 0.0.0.0:{PORT} --worker-class gevent"], shell=True)
 
 class CMD(object):
     START = ["start", f"start@{bot}"]

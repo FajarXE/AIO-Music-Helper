@@ -1,7 +1,6 @@
 aigpy
 aiohttp
 gevent
-git+https://github.com/kokarare1212/librespot-python#egg=librespot
 gunicorn
 flask
 lyricsgenius
@@ -17,3 +16,4 @@ pyrofork
 python-dotenv
 TgCrypto-pyrofork
 uvloop
+git+https://github.com/kokarare1212/librespot-python#egg=librespot

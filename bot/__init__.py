@@ -1,4 +1,3 @@
-from uvloop import install
 from config import Config
 from pyrogram import Client
 import subprocess, os

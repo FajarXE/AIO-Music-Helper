@@ -20,7 +20,6 @@ async def start():
 if __name__ == "__main__":
     if not os.path.isdir(Config.DOWNLOAD_BASE_DIR):
         os.makedirs(Config.DOWNLOAD_BASE_DIR)
-    aio.run()
     
     loop = asyncio.new_event_loop()
     future = loop.run_until_complete(start())
